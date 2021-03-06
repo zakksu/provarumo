@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using provarumo.Models;
+using provarumo.UI.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace provarumo.Controllers
+namespace provarumo.UI.Controllers
 {
     public class HomeController : Controller
     {

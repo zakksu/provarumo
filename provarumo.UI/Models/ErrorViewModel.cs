@@ -1,6 +1,6 @@
 using System;
 
-namespace provarumo.Models
+namespace provarumo.UI.Models
 {
     public class ErrorViewModel
     {
