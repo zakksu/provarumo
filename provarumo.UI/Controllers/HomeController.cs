@@ -28,6 +28,12 @@ namespace provarumo.UI.Controllers
             return View();
         }
 
+        public IActionResult Cozinha()
+        {
+            var pedidos = new PedidoModel().Listar();
+            return View(pedidos);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
