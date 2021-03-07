@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using provarumo.Models.Entities;
 using provarumo.UI.Models;
 using System;
 using System.Collections.Generic;
@@ -20,18 +21,34 @@ namespace provarumo.UI.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var pedidos = new PedidoModel().Listar();
+            return View(pedidos);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Copa()
         {
-            return View();
+            var pedidos = new PedidoModel().Listar();
+            return View(pedidos);
         }
 
         public IActionResult Cozinha()
         {
             var pedidos = new PedidoModel().Listar();
             return View(pedidos);
+        }
+
+        public IActionResult CadastrarPedido()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarPedido(PedidoEntity pedido)
+        {
+            var pedidoModel = new PedidoModel();
+            pedidoModel.Inserir(pedido);
+            var pedidos = new PedidoModel().Listar();
+            return View("Index", pedidos);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

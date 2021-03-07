@@ -16,8 +16,6 @@ namespace provarumo.UI
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
-            //new PedidoModel().Inserir(new PedidoEntity { NomeCliente = "cleiton", NumeroMesa = 74, Prato = "rabanete", Bebida = "Monster", Quantidade = 666 });
-            //new PedidoModel().Listar();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
